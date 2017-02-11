@@ -1,0 +1,6 @@
+framework module Pods_LYK {
+  umbrella header "Pods-LYK-umbrella.h"
+
+  export *
+  module * { export * }
+}

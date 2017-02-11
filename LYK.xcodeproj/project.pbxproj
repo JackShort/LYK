@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */; };
+		3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */; };
+		3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */; };
+		3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */; };
+		337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */; };
+		337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E37361E2D26F6001BCF2D /* FeedTableViewCell.swift */; };
+		337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E37381E2D2E33001BCF2D /* ConversationViewController.swift */; };
 		33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */; };
-		33D6D2CB1E2D1E66006F6843 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2CA1E2D1E66006F6843 /* ViewController.swift */; };
+		33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */; };
 		33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2CC1E2D1E66006F6843 /* Main.storyboard */; };
 		33D6D2D01E2D1E66006F6843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */; };
 		33D6D2D31E2D1E66006F6843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2D11E2D1E66006F6843 /* LaunchScreen.storyboard */; };
 		33D6D2DE1E2D1E66006F6843 /* LYKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2DD1E2D1E66006F6843 /* LYKTests.swift */; };
 		33D6D2E91E2D1E66006F6843 /* LYKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2E81E2D1E66006F6843 /* LYKUITests.swift */; };
+		33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A821E2D35AE008475CB /* ProfileViewController.swift */; };
+		33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */; };
+		33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A861E2D4ABD008475CB /* CameraViewController.swift */; };
+		33DD6A891E2D4BF1008475CB /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */; };
+		33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */; };
+		33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */; };
+		33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */; };
+		574D458AF96C11D356C15C22 /* Pods_LYK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759243CCD8DDC71157600A96 /* Pods_LYK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
+		337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		337E37361E2D26F6001BCF2D /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		337E37381E2D2E33001BCF2D /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		33D6D2C51E2D1E66006F6843 /* LYK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33D6D2CA1E2D1E66006F6843 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		33D6D2CD1E2D1E66006F6843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D6D2D21E2D1E66006F6843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +69,16 @@
 		33D6D2E41E2D1E66006F6843 /* LYKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D6D2E81E2D1E66006F6843 /* LYKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYKUITests.swift; sourceTree = "<group>"; };
 		33D6D2EA1E2D1E66006F6843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33DD6A821E2D35AE008475CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
+		33DD6A861E2D4ABD008475CB /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemHeader.xib; sourceTree = "<group>"; };
+		33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemPhotoCell.xib; sourceTree = "<group>"; };
+		35383A750A64DD6DC57FF324 /* Pods-LYK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.release.xcconfig"; sourceTree = "<group>"; };
+		759243CCD8DDC71157600A96 /* Pods_LYK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8A42AFE2116A7BD1BEFB24A /* Pods-LYK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574D458AF96C11D356C15C22 /* Pods_LYK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3363FFC01E3D49E100745EC9 /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */,
+				3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */,
+				3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */,
+			);
+			name = "Log In";
+			sourceTree = "<group>";
+		};
 		33D6D2BC1E2D1E66006F6843 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +124,8 @@
 				33D6D2DC1E2D1E66006F6843 /* LYKTests */,
 				33D6D2E71E2D1E66006F6843 /* LYKUITests */,
 				33D6D2C61E2D1E66006F6843 /* Products */,
+				C6F9EC4A27D33C81D0FECAEE /* Pods */,
+				42133A523C9AF980F3536B02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +142,12 @@
 		33D6D2C71E2D1E66006F6843 /* LYK */ = {
 			isa = PBXGroup;
 			children = (
-				33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */,
-				33D6D2CA1E2D1E66006F6843 /* ViewController.swift */,
-				33D6D2CC1E2D1E66006F6843 /* Main.storyboard */,
+				33DD6A911E2EA793008475CB /* Models */,
+				33DD6A921E2EA799008475CB /* Application */,
+				33DD6A931E2EA7CB008475CB /* Views */,
 				33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */,
-				33D6D2D11E2D1E66006F6843 /* LaunchScreen.storyboard */,
 				33D6D2D41E2D1E66006F6843 /* Info.plist */,
+				333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */,
 			);
 			path = LYK;
 			sourceTree = "<group>";
@@ -125,6 +170,131 @@
 			path = LYKUITests;
 			sourceTree = "<group>";
 		};
+		33DD6A901E2EA6C7008475CB /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */,
+				33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */,
+			);
+			name = Conversation;
+			sourceTree = "<group>";
+		};
+		33DD6A911E2EA793008475CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		33DD6A921E2EA799008475CB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A941E2EA7EB008475CB /* Main */,
+				3363FFC01E3D49E100745EC9 /* Log In */,
+				33DD6A961E2EA868008475CB /* Feed */,
+				33DD6A991E2EA891008475CB /* Camera */,
+				33DD6A971E2EA86D008475CB /* NewsFeed */,
+				33DD6A981E2EA874008475CB /* Profile */,
+				33DD6A951E2EA84E008475CB /* Conversation */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		33DD6A931E2EA7CB008475CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A9B1E2EA8C9008475CB /* Feed */,
+				33DD6A9A1E2EA8C3008475CB /* Main */,
+				33DD6A901E2EA6C7008475CB /* Conversation */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		33DD6A941E2EA7EB008475CB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */,
+				33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		33DD6A951E2EA84E008475CB /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				337E37381E2D2E33001BCF2D /* ConversationViewController.swift */,
+			);
+			name = Conversation;
+			sourceTree = "<group>";
+		};
+		33DD6A961E2EA868008475CB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				337E37361E2D26F6001BCF2D /* FeedTableViewCell.swift */,
+				33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		33DD6A971E2EA86D008475CB /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */,
+			);
+			name = NewsFeed;
+			sourceTree = "<group>";
+		};
+		33DD6A981E2EA874008475CB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A821E2D35AE008475CB /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		33DD6A991E2EA891008475CB /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */,
+				33DD6A861E2D4ABD008475CB /* CameraViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		33DD6A9A1E2EA8C3008475CB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				33D6D2D11E2D1E66006F6843 /* LaunchScreen.storyboard */,
+				33D6D2CC1E2D1E66006F6843 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		33DD6A9B1E2EA8C9008475CB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		42133A523C9AF980F3536B02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				759243CCD8DDC71157600A96 /* Pods_LYK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6F9EC4A27D33C81D0FECAEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8A42AFE2116A7BD1BEFB24A /* Pods-LYK.debug.xcconfig */,
+				35383A750A64DD6DC57FF324 /* Pods-LYK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33D6D2ED1E2D1E66006F6843 /* Build configuration list for PBXNativeTarget "LYK" */;
 			buildPhases = (
+				710F7653E724891C57B64D68 /* [CP] Check Pods Manifest.lock */,
 				33D6D2C11E2D1E66006F6843 /* Sources */,
 				33D6D2C21E2D1E66006F6843 /* Frameworks */,
 				33D6D2C31E2D1E66006F6843 /* Resources */,
+				32F6EA6F51014A31DEDA32F0 /* [CP] Embed Pods Frameworks */,
+				8318546EC7AB17A7347D7079 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,8 +409,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D6D2D31E2D1E66006F6843 /* LaunchScreen.storyboard in Resources */,
+				337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */,
 				33D6D2D01E2D1E66006F6843 /* Assets.xcassets in Resources */,
+				33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */,
 				33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */,
+				33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */,
+				333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +434,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32F6EA6F51014A31DEDA32F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYK/Pods-LYK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		710F7653E724891C57B64D68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8318546EC7AB17A7347D7079 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYK/Pods-LYK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33D6D2C11E2D1E66006F6843 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D6D2CB1E2D1E66006F6843 /* ViewController.swift in Sources */,
+				3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */,
+				33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */,
+				33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */,
+				337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */,
+				3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */,
+				33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */,
+				337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */,
+				33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */,
+				33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */,
 				33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */,
+				3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */,
+				33DD6A891E2D4BF1008475CB /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +646,7 @@
 		};
 		33D6D2EE1E2D1E66006F6843 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8A42AFE2116A7BD1BEFB24A /* Pods-LYK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J9S3ZH32Z5;
@@ -424,6 +660,7 @@
 		};
 		33D6D2EF1E2D1E66006F6843 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35383A750A64DD6DC57FF324 /* Pods-LYK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J9S3ZH32Z5;
@@ -512,6 +749,7 @@
 				33D6D2EF1E2D1E66006F6843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33D6D2F01E2D1E66006F6843 /* Build configuration list for PBXNativeTarget "LYKTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +758,7 @@
 				33D6D2F21E2D1E66006F6843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33D6D2F31E2D1E66006F6843 /* Build configuration list for PBXNativeTarget "LYKUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +767,7 @@
 				33D6D2F51E2D1E66006F6843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

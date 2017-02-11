@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+class ProfileViewController: UIViewController {
+    var username: String! = "Jack Short"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //navigationbar shit
+        self.navigationController?.navigationBar.topItem?.title = username
+    }
+}
