@@ -107,28 +107,23 @@
         <scene sceneID="fa9-6h-Dub">
             <objects>
                 <viewController storyboardIdentifier="NewsFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OFF-C4-Soj" customClass="NewsFeedViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SxC-8K-5Xm"/>
-                        <viewControllerLayoutGuide type="bottom" id="Uyl-Bk-BuM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qqp-dE-s4S">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a76-lh-wcc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUb-X8-EIL">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.90196078430000004" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="OFF-C4-Soj" id="7rX-J0-Xti"/>
+                            <outlet property="delegate" destination="OFF-C4-Soj" id="B70-nb-ag8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="a65-W4-vTM"/>
                     <connections>
-                        <outlet property="testImageView" destination="sUb-X8-EIL" id="0nc-kJ-NKY"/>
+                        <outlet property="tableView" destination="a76-lh-wcc" id="cDm-xD-9TY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfO-Ga-EAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="1047"/>
+            <point key="canvasLocation" x="801" y="1038"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="0wx-3d-9Fy">
@@ -447,6 +442,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLa-c1-sX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802" y="-340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ibq-vp-6HU">
+            <objects>
+                <navigationController storyboardIdentifier="NFNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="4NF-bY-9pN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JjJ-SY-LDN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OFF-C4-Soj" kind="relationship" relationship="rootViewController" id="ALc-md-fB7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccd-pO-yH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="1038"/>
         </scene>
     </scenes>
 </document>

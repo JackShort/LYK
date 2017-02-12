@@ -37,9 +37,12 @@ class ImageViewController: UIViewController {
     }
     
     @IBAction func post(_ sender: Any) {
-        let photoRef: FIRDatabaseReference = self.ref.child("users").child(self.currentUser.uid).child("photos").childByAutoId()
+        let photoRef: FIRDatabaseReference = self.ref.child("photos").childByAutoId()
+        photoRef.setValue(["user": self.currentUser.uid, "title": "test"])
         let photoId: String = photoRef.key
-        photoRef.setValue(true)
+        
+        let userPhotoRef: FIRDatabaseReference = self.ref.child("users").child(self.currentUser.uid).child("photos").child(photoId)
+        userPhotoRef.setValue(true)
         
         let data: Data = UIImagePNGRepresentation(self.photo)!
         let dataRef = self.storageRef.child(self.currentUser.uid).child("\(photoId).png")
@@ -56,6 +59,7 @@ class ImageViewController: UIViewController {
         uploadTask.observe(.failure) { (snapshot) in
             print("something went wrong in the upload")
             photoRef.removeValue()
+            userPhotoRef.removeValue()
         }
         
         self.dismiss(animated: false, completion: nil)

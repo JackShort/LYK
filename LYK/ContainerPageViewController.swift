@@ -40,7 +40,7 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         
         let feedTabBarController: UITabBarController = sb.instantiateViewController(withIdentifier: "FeedTabBarController") as! UITabBarController
         let cameraViewController: CameraViewController = sb.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
-        let newsFeedViewController: NewsFeedViewController = sb.instantiateViewController(withIdentifier: "NewsFeedViewController") as! NewsFeedViewController
+        let newsFeedViewController: UINavigationController = sb.instantiateViewController(withIdentifier: "NFNavigationController") as! UINavigationController
         
         self.orderedViewControllers.append(feedTabBarController)
         self.orderedViewControllers.append(cameraViewController)
