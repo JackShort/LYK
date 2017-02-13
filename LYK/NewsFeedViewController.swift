@@ -34,6 +34,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
 //                self.testImageView.sd_setImage(with: url)
 //            }
 //        }
+        
+        //table view shit
+        self.tableView.register(NFPhotoCell.classForCoder(), forCellReuseIdentifier: "NFPhotoCell")
+        self.tableView.register(UINib(nibName: "NFPhotoCell", bundle: nil), forCellReuseIdentifier: "NFPhotoCell")
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
@@ -41,19 +45,21 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 21))
-        return UIView()
+        view.layer.backgroundColor = UIColor.black.cgColor
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NFPhotoCell") as! NFPhotoCell
+        return cell
     }
 }
