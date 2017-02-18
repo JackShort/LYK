@@ -15,11 +15,19 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
     var orderedViewControllers: [UIViewController] = []
     var isHidden = true
     
+    var user: User!
+    var currentUser: FIRUser!
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
         delegate = self
+        
+        self.ref = FIRDatabase.database().reference()
+        self.currentUser = FIRAuth.auth()?.currentUser
+        getUser()
         
         createViewControllers()
         setupViewControllers()
@@ -34,6 +42,18 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         return UIStatusBarAnimation.fade
     }
     
+    //user methods
+    func getUser() {
+        self.ref.child("users").child(self.currentUser.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSDictionary
+            let username = value["username"] as! String
+            let uid = self.currentUser.uid
+            let photos = (value["photos"] as! NSDictionary).allKeys as! [String]
+            
+            self.user = User(uid: uid, username: username, photos: photos)
+        })
+    }
+    
     //custom methods
     func createViewControllers() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -41,6 +61,14 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         let feedTabBarController: UITabBarController = sb.instantiateViewController(withIdentifier: "FeedTabBarController") as! UITabBarController
         let cameraViewController: CameraViewController = sb.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
         let newsFeedViewController: UINavigationController = sb.instantiateViewController(withIdentifier: "NFNavigationController") as! UINavigationController
+        
+        let nfview = newsFeedViewController.viewControllers[0] as! NewsFeedViewController
+        let fnav = feedTabBarController.viewControllers?[0] as! UINavigationController
+        let fview = fnav.viewControllers[0] as! FeedViewController
+        
+        fview.user = self.user
+        nfview.user = self.user
+        cameraViewController.user = self.user
         
         self.orderedViewControllers.append(feedTabBarController)
         self.orderedViewControllers.append(cameraViewController)

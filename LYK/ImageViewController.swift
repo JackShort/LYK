@@ -16,12 +16,11 @@ class ImageViewController: UIViewController {
     var storageRef: FIRStorageReference!
     var ref: FIRDatabaseReference!
     var photo: UIImage!
-    var currentUser: FIRUser!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.currentUser = FIRAuth.auth()?.currentUser!
         self.storageRef = FIRStorage.storage().reference()
         self.ref = FIRDatabase.database().reference()
         
@@ -38,14 +37,14 @@ class ImageViewController: UIViewController {
     
     @IBAction func post(_ sender: Any) {
         let photoRef: FIRDatabaseReference = self.ref.child("photos").childByAutoId()
-        photoRef.setValue(["user": self.currentUser.uid, "title": "test"])
+        photoRef.setValue(["uid": self.user.uid, "username": self.user.username, "title": "test"])
         let photoId: String = photoRef.key
         
-        let userPhotoRef: FIRDatabaseReference = self.ref.child("users").child(self.currentUser.uid).child("photos").child(photoId)
+        let userPhotoRef: FIRDatabaseReference = self.ref.child("users").child(self.user.uid).child("photos").child(photoId)
         userPhotoRef.setValue(true)
         
         let data: Data = UIImagePNGRepresentation(self.photo)!
-        let dataRef = self.storageRef.child(self.currentUser.uid).child("\(photoId).png")
+        let dataRef = self.storageRef.child(self.user.uid).child("\(photoId).png")
         let uploadTask = dataRef.put(data)
         
         uploadTask.observe(.resume) { (snapshot) in

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import Firebase
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var previewLayer: UIView!
@@ -24,9 +25,18 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var microphone: AVCaptureDevice?
     
     var photo: UIImage?
+    var isBackFacing: Bool = true;
+    
+    var ref: FIRDatabaseReference!
+    var currentUser: FIRUser!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Firebase setup
+        self.ref = FIRDatabase.database().reference()
+        self.currentUser = FIRAuth.auth()?.currentUser
         
         //setup camera button
         self.cameraButton.layer.masksToBounds = false
@@ -118,7 +128,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
             let image = UIImage(data: dataImage)
             self.photo = image
-            self.photo = UIImage(cgImage: (self.photo?.cgImage!)!, scale: 1.0, orientation: UIImageOrientation.leftMirrored)
+            if (!self.isBackFacing) {
+                self.photo = UIImage(cgImage: (self.photo?.cgImage!)!, scale: 1.0, orientation: UIImageOrientation.leftMirrored)
+            }
             
             self.performSegue(withIdentifier: "photoSegue", sender: self)
         }
@@ -128,6 +140,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if segue.identifier == "photoSegue" {
             let vc = segue.destination as! ImageViewController
             vc.photo = self.photo
+            vc.user = self.user
         }
     }
     
@@ -135,5 +148,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.captureSession?.stopRunning()
         self.setupCamera(back: self.switchCameraImageView.isHighlighted)
         self.switchCameraImageView.isHighlighted = !self.switchCameraImageView.isHighlighted
+        self.isBackFacing = !self.switchCameraImageView.isHighlighted;
     }
 }

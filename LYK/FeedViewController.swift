@@ -11,6 +11,7 @@ import UIKit
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var appName = "LYK"
+    var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()

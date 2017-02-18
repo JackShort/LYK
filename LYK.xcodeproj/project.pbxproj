@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330716761E58CA6B00CBBE4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330716751E58CA6B00CBBE4F /* User.swift */; };
 		333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */; };
 		3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */; };
 		3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */; };
 		3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */; };
-		337A09271E500EBB009DFC9A /* NFPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337A09261E500EBB009DFC9A /* NFPhotoCell.xib */; };
-		337A09291E500ECB009DFC9A /* NFPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A09281E500ECB009DFC9A /* NFPhotoCell.swift */; };
+		337A09271E500EBB009DFC9A /* NFPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337A09261E500EBB009DFC9A /* NFPostCell.xib */; };
+		337A09291E500ECB009DFC9A /* NFPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A09281E500ECB009DFC9A /* NFPostCell.swift */; };
 		337A092B1E500F54009DFC9A /* NFItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */; };
 		337A092D1E500F66009DFC9A /* NFItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */; };
 		337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */; };
@@ -53,12 +54,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330716751E58CA6B00CBBE4F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
-		337A09261E500EBB009DFC9A /* NFPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFPhotoCell.xib; sourceTree = "<group>"; };
-		337A09281E500ECB009DFC9A /* NFPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFPhotoCell.swift; sourceTree = "<group>"; };
+		337A09261E500EBB009DFC9A /* NFPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFPostCell.xib; sourceTree = "<group>"; };
+		337A09281E500ECB009DFC9A /* NFPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFPostCell.swift; sourceTree = "<group>"; };
 		337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFItemHeaderView.xib; sourceTree = "<group>"; };
 		337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFItemHeaderView.swift; sourceTree = "<group>"; };
 		337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		337A09251E500E97009DFC9A /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				337A09261E500EBB009DFC9A /* NFPhotoCell.xib */,
+				337A09261E500EBB009DFC9A /* NFPostCell.xib */,
 				337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */,
 			);
 			name = NewsFeed;
@@ -199,6 +201,7 @@
 		33DD6A911E2EA793008475CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				330716751E58CA6B00CBBE4F /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -258,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */,
-				337A09281E500ECB009DFC9A /* NFPhotoCell.swift */,
+				337A09281E500ECB009DFC9A /* NFPostCell.swift */,
 				337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */,
 			);
 			name = NewsFeed;
@@ -430,7 +433,7 @@
 			files = (
 				33D6D2D31E2D1E66006F6843 /* LaunchScreen.storyboard in Resources */,
 				337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */,
-				337A09271E500EBB009DFC9A /* NFPhotoCell.xib in Resources */,
+				337A09271E500EBB009DFC9A /* NFPostCell.xib in Resources */,
 				337A092B1E500F54009DFC9A /* NFItemHeaderView.xib in Resources */,
 				33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */,
 				33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */,
@@ -514,11 +517,12 @@
 				33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */,
 				337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */,
 				3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */,
-				337A09291E500ECB009DFC9A /* NFPhotoCell.swift in Sources */,
+				337A09291E500ECB009DFC9A /* NFPostCell.swift in Sources */,
 				337A092D1E500F66009DFC9A /* NFItemHeaderView.swift in Sources */,
 				33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */,
 				337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */,
 				33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */,
+				330716761E58CA6B00CBBE4F /* User.swift in Sources */,
 				33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */,
 				33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */,
 				3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */,
