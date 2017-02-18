@@ -140,12 +140,24 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ofw-eK-D6Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y40-Tb-vEI" userLabel="Array">
+                                        <rect key="frame" x="94" y="292" width="114" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flipCameraFront" highlightedImage="flipCameraBack" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-Q2-PHG">
                                 <rect key="frame" x="310" y="30" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxk-y4-gr9" userLabel="Array">
+                                <rect key="frame" x="130" y="292" width="114" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-he-dz9">
                                 <rect key="frame" x="152" y="575" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -158,9 +170,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="arrayButton" destination="Jxk-y4-gr9" id="YGd-uC-Bg5"/>
                         <outlet property="cameraButton" destination="mqu-he-dz9" id="GLH-G2-KYX"/>
-                        <outlet property="previewLayer" destination="Ofw-eK-D6Q" id="85L-MW-uYd"/>
                         <outlet property="switchCameraImageView" destination="QKq-Q2-PHG" id="Xe8-oZ-zYT"/>
+                        <outlet property="view" destination="Jxk-y4-gr9" id="cdq-kZ-N5A"/>
                         <segue destination="zW1-MF-SDr" kind="presentation" identifier="photoSegue" animates="NO" modalPresentationStyle="fullScreen" id="RDz-kd-B5j"/>
                     </connections>
                 </viewController>
