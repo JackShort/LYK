@@ -21,10 +21,10 @@
 		33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */; };
 		33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */; };
 		33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2CC1E2D1E66006F6843 /* Main.storyboard */; };
-		33D6D2D01E2D1E66006F6843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */; };
 		33D6D2D31E2D1E66006F6843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2D11E2D1E66006F6843 /* LaunchScreen.storyboard */; };
 		33D6D2DE1E2D1E66006F6843 /* LYKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2DD1E2D1E66006F6843 /* LYKTests.swift */; };
 		33D6D2E91E2D1E66006F6843 /* LYKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2E81E2D1E66006F6843 /* LYKUITests.swift */; };
+		33D928691E581802009122A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D928681E581802009122A1 /* Assets.xcassets */; };
 		33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A821E2D35AE008475CB /* ProfileViewController.swift */; };
 		33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */; };
 		33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A861E2D4ABD008475CB /* CameraViewController.swift */; };
@@ -68,7 +68,6 @@
 		33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		33D6D2CD1E2D1E66006F6843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D6D2D21E2D1E66006F6843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D6D2D41E2D1E66006F6843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D6D2D91E2D1E66006F6843 /* LYKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +76,7 @@
 		33D6D2E41E2D1E66006F6843 /* LYKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D6D2E81E2D1E66006F6843 /* LYKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYKUITests.swift; sourceTree = "<group>"; };
 		33D6D2EA1E2D1E66006F6843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33D928681E581802009122A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33DD6A821E2D35AE008475CB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
 		33DD6A861E2D4ABD008475CB /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -162,9 +162,9 @@
 				33DD6A911E2EA793008475CB /* Models */,
 				33DD6A921E2EA799008475CB /* Application */,
 				33DD6A931E2EA7CB008475CB /* Views */,
-				33D6D2CF1E2D1E66006F6843 /* Assets.xcassets */,
 				33D6D2D41E2D1E66006F6843 /* Info.plist */,
 				333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */,
+				33D928681E581802009122A1 /* Assets.xcassets */,
 			);
 			path = LYK;
 			sourceTree = "<group>";
@@ -430,12 +430,12 @@
 			files = (
 				33D6D2D31E2D1E66006F6843 /* LaunchScreen.storyboard in Resources */,
 				337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */,
-				33D6D2D01E2D1E66006F6843 /* Assets.xcassets in Resources */,
 				337A09271E500EBB009DFC9A /* NFPhotoCell.xib in Resources */,
 				337A092B1E500F54009DFC9A /* NFItemHeaderView.xib in Resources */,
 				33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */,
 				33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */,
 				33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */,
+				33D928691E581802009122A1 /* Assets.xcassets in Resources */,
 				333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

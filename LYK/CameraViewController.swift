@@ -13,6 +13,7 @@ import AVFoundation
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var previewLayer: UIView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var switchCameraImageView: UIImageView!
     
     var captureSession: AVCaptureSession?
     var stillImageOutput: AVCapturePhotoOutput?
@@ -27,25 +28,58 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setup camera button
         self.cameraButton.layer.masksToBounds = false
         self.cameraButton.layer.cornerRadius = self.cameraButton.frame.size.height / 2
         self.cameraButton.layer.borderWidth = 5
         self.cameraButton.layer.borderColor = UIColor.white.cgColor
         
+        //setup switch camera button
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.switchCamera))
+        singleTap.numberOfTapsRequired = 1
+        self.switchCameraImageView.addGestureRecognizer(singleTap)
+        
+        setupCamera(back: true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.fade
+    }
+    
+    func setupCamera(back: Bool) {
         // ---- EVERYTHING BELOW THIS IS CAMERA SHIT
         //setup session
         captureSession = AVCaptureSession()
-        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+        captureSession?.sessionPreset = AVCaptureSessionPresetHigh
         stillImageOutput = AVCapturePhotoOutput()
         
         //get devices
-        backCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back)
         frontCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front)
+        backCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back)
         microphone = AVCaptureDevice.defaultDevice(withDeviceType: .builtInMicrophone, mediaType: AVMediaTypeAudio, position: .unspecified)
         
         //setup input to attach devices to session
         do {
-            let input = try AVCaptureDeviceInput(device: backCamera)
+            var input: AVCaptureDeviceInput;
+            
+            if (back) {
+                input = try AVCaptureDeviceInput(device: backCamera)
+            } else {
+                input = try AVCaptureDeviceInput(device: frontCamera)
+            }
+            
             if captureSession!.canAddInput(input) {
                 captureSession!.addInput(input)
                 
@@ -63,23 +97,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         } catch {
             print(error.localizedDescription)
         }
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.fade
     }
     
     //avcapture delegate functions
@@ -101,6 +118,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
             let image = UIImage(data: dataImage)
             self.photo = image
+            self.photo = UIImage(cgImage: (self.photo?.cgImage!)!, scale: 1.0, orientation: UIImageOrientation.leftMirrored)
             
             self.performSegue(withIdentifier: "photoSegue", sender: self)
         }
@@ -111,5 +129,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             let vc = segue.destination as! ImageViewController
             vc.photo = self.photo
         }
+    }
+    
+    func switchCamera() {
+        self.captureSession?.stopRunning()
+        self.setupCamera(back: self.switchCameraImageView.isHighlighted)
+        self.switchCameraImageView.isHighlighted = !self.switchCameraImageView.isHighlighted
     }
 }
