@@ -19,6 +19,10 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
     var currentUser: FIRUser!
     var ref: FIRDatabaseReference!
     
+    var nfView: NewsFeedViewController!
+    var fView: FeedViewController!
+    var cameraView: CameraViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +55,10 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
             let photos = (value["photos"] as! NSDictionary).allKeys as! [String]
             
             self.user = User(uid: uid, username: username, photos: photos)
+            
+            self.cameraView.user = self.user
+            self.nfView.user = self.user
+            self.fView.user = self.user
         })
     }
     
@@ -62,13 +70,10 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         let cameraViewController: CameraViewController = sb.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
         let newsFeedViewController: UINavigationController = sb.instantiateViewController(withIdentifier: "NFNavigationController") as! UINavigationController
         
-        let nfview = newsFeedViewController.viewControllers[0] as! NewsFeedViewController
+        self.nfView = newsFeedViewController.viewControllers[0] as! NewsFeedViewController
         let fnav = feedTabBarController.viewControllers?[0] as! UINavigationController
-        let fview = fnav.viewControllers[0] as! FeedViewController
-        
-        fview.user = self.user
-        nfview.user = self.user
-        cameraViewController.user = self.user
+        self.fView = fnav.viewControllers[0] as! FeedViewController
+        self.cameraView = cameraViewController
         
         self.orderedViewControllers.append(feedTabBarController)
         self.orderedViewControllers.append(cameraViewController)

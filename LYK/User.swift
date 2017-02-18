@@ -18,4 +18,8 @@ class User {
         self.uid = uid
         self.photos = photos
     }
+    
+    var description : String {
+        return "Username: \(self.username)"
+    }
 }
