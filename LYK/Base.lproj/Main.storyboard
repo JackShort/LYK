@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="801" y="1038"/>
         </scene>
-        <!--View Controller-->
+        <!--Swipe Card View Controller-->
         <scene sceneID="NKy-6C-zxG">
             <objects>
-                <viewController id="uZZ-NY-yxa" sceneMemberID="viewController">
+                <viewController id="uZZ-NY-yxa" customClass="SwipeCardViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="onz-at-4PX"/>
                         <viewControllerLayoutGuide type="bottom" id="zkb-O5-hwh"/>
@@ -146,6 +146,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="kolodaView" destination="kbA-xg-NiK" id="rcG-ds-O4n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CG4-Fx-I6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

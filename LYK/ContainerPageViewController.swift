@@ -31,7 +31,6 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         
         self.ref = FIRDatabase.database().reference()
         self.currentUser = FIRAuth.auth()?.currentUser
-        getUser()
         
         createViewControllers()
         setupViewControllers()
@@ -53,7 +52,7 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
             let username = value["username"] as! String
             let uid = self.currentUser.uid
             
-            guard let photos = (value["photos"] as! NSDictionary).allKeys as? [String] else {
+            guard let photos = (value["photos"] as? NSDictionary)?.allKeys as? [String] else {
                 let photos = [String]()
                 self.user = User(uid: uid, username: username, photos: photos)
                 
@@ -83,6 +82,8 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         let fnav = feedTabBarController.viewControllers?[0] as! UINavigationController
         self.fView = fnav.viewControllers[0] as! FeedViewController
         self.cameraView = cameraViewController
+        
+        getUser()
         
         self.orderedViewControllers.append(feedTabBarController)
         self.orderedViewControllers.append(cameraViewController)

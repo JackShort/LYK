@@ -10,10 +10,24 @@ import Foundation
 import UIKit
 import Koloda
 
-class SwipeCardViewController: UIViewController {
+class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
+    @IBOutlet weak var kolodaView: KolodaView!
+    
     var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
+    }
+    
+    // koloda functions 
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return 1
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        return UIImageView()
     }
 }
