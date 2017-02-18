@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Koloda.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LYK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,15 +44,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0BD09D896E6E945966FBB47C147E50AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B71CC03068943A58614441D42BD4014</key>
+		<key>20151774CE2F5FA6B8126D4F5ED1C5FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AF1CEC06BCEE62F0A74BBD100F46E19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8258C90FD82855A16D08DFDDA218A4DE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9BDD0E42347ED8EDEA19928B85B79254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F36DE4E04DEF143EE0D79C40DDD57B2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5DD9D371290E4354A481F48347DF198</key>
 		<dict>
 			<key>primary</key>
 			<true/>

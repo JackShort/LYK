@@ -52,8 +52,17 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
             let value = snapshot.value as! NSDictionary
             let username = value["username"] as! String
             let uid = self.currentUser.uid
-            let photos = (value["photos"] as! NSDictionary).allKeys as! [String]
             
+            guard let photos = (value["photos"] as! NSDictionary).allKeys as? [String] else {
+                let photos = [String]()
+                self.user = User(uid: uid, username: username, photos: photos)
+                
+                self.cameraView.user = self.user
+                self.nfView.user = self.user
+                self.fView.user = self.user
+                
+                return
+            }
             self.user = User(uid: uid, username: username, photos: photos)
             
             self.cameraView.user = self.user

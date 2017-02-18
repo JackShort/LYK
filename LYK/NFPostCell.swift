@@ -13,6 +13,8 @@ class NFPostCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var photo: UIImage!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }

@@ -11,4 +11,5 @@ target 'LYK' do
     pod 'Firebase/Storage'
     pod 'SDWebImage', '~>3.8'
     pod 'ChameleonFramework/Swift'
+    pod 'Koloda'
 end

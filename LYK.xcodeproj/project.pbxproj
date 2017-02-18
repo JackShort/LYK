@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		330716761E58CA6B00CBBE4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330716751E58CA6B00CBBE4F /* User.swift */; };
+		330716781E58DC8100CBBE4F /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */; };
 		333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */; };
 		3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */; };
 		3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		330716751E58CA6B00CBBE4F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
 		333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */,
 				337A09281E500ECB009DFC9A /* NFPostCell.swift */,
 				337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */,
+				330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */,
 				337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */,
 				3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */,
+				330716781E58DC8100CBBE4F /* SwipeCardViewController.swift in Sources */,
 				337A09291E500ECB009DFC9A /* NFPostCell.swift in Sources */,
 				337A092D1E500F66009DFC9A /* NFItemHeaderView.swift in Sources */,
 				33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */,

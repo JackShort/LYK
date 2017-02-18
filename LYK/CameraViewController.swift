@@ -132,6 +132,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 self.photo = UIImage(cgImage: (self.photo?.cgImage!)!, scale: 1.0, orientation: UIImageOrientation.leftMirrored)
             }
             
+            //this is when we change to the show image view controller
             self.performSegue(withIdentifier: "photoSegue", sender: self)
         }
     }

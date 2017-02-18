@@ -129,7 +129,12 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.usernameLabel.text = username
         cell.titleLabel.text = title
+        cell.photo = photo
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: false)
     }
 }

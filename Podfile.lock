@@ -49,6 +49,9 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - Koloda (4.0):
+    - pop (~> 1.0)
+  - pop (1.0.9)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -61,6 +64,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - Koloda
   - SDWebImage (~> 3.8)
   - SwiftyJSON
 
@@ -78,9 +82,11 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  Koloda: cb171633afc6182a77821b7951e38b2cb272ba7c
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b6a20903c2d5cfc6b485530a0a8393330c50bd0a
+PODFILE CHECKSUM: 5fecde2f8874168d27ce8865a1501c96ccf07184
 
 COCOAPODS: 1.2.0
