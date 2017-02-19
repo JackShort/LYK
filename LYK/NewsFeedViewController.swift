@@ -50,6 +50,12 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.register(NFPostCell.classForCoder(), forCellReuseIdentifier: "NFPostCell")
         self.tableView.register(UINib(nibName: "NFPostCell", bundle: nil), forCellReuseIdentifier: "NFPostCell")
         
+        //navigation bar shit
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatMint()
+        self.navigationController?.navigationBar.tintColor = UIColor.flatWhite()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatWhite()]
+        self.title = "LYK"
+        
         // load data
         self.load()
     }
@@ -76,6 +82,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
             let value = snapshot.value as? NSDictionary
             
             self.getImage(photoData: value!, photoId: photoId)
+            print("fetching photo...")
         })
     }
     
@@ -119,7 +126,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 110
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,9 +139,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let photo = photoData["photo"] as! UIImage
         let title = photoData["title"] as! String
         
-        cell.usernameLabel.text = username
+        cell.setUsernameLabel(name: username)
+        cell.previewImageView.image = photo
         cell.titleLabel.text = title
-        cell.photo = photo
+        cell.setPhoto(photo: photo)
         
         return cell
     }

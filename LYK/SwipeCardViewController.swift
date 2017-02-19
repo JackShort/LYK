@@ -21,8 +21,6 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        print(self.image)
-        
         self.navigationController?.navigationBar.barTintColor = UIColor.flatBlack()
         self.navigationController?.navigationBar.tintColor = UIColor.flatWhite()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatWhite()]

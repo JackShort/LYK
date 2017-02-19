@@ -17,6 +17,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var switchCameraImageView: UIImageView!
     @IBOutlet weak var picturesTakenImageView: UIImageView!
+    @IBOutlet weak var sendButton: UIButton!
     
     var captureSession: AVCaptureSession?
     var stillImageOutput: AVCapturePhotoOutput?
@@ -53,11 +54,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         singleTap.numberOfTapsRequired = 1
         self.switchCameraImageView.addGestureRecognizer(singleTap)
         
+        //setup send button
+        self.sendButton.isHidden = true
+        
         //remove photos
         let tapOnPhotos = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.removePhotos))
         tapOnPhotos.numberOfTapsRequired = 1
         self.picturesTakenImageView.addGestureRecognizer(tapOnPhotos)
         self.picturesTakenImageView.isUserInteractionEnabled = false
+        
+//        //remove photos
+//        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.switchCamera))
+//        tapOnPhotos.numberOfTapsRequired = 2
+//        self.previewLayer.addGestureRecognizer(doubleTap)
         
         // setup preview past pictures
         self.photosTaken = [UIImage]()
@@ -69,20 +78,21 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         setupCamera(back: true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
+    }
+    
+    func setPhotosTaken (photos: [UIImage]) {
+        self.photosTaken = photos
+        
+        if self.photosTaken.isEmpty {
+            self.picturesTakenImageView.image = nil
+            self.picturesTakenImageView.isUserInteractionEnabled = false
+            self.picturesTakenImageView.isHidden = true
+            self.sendButton.isHidden = true
+        } else {
+            self.picturesTakenImageView.image = self.photosTaken.last
+        }
     }
     
     func setupCamera(back: Bool) {
@@ -156,6 +166,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             self.picturesTakenImageView.image = self.photo
             self.picturesTakenImageView.isUserInteractionEnabled = true
             self.photosTaken.append(self.photo!)
+            
+            self.sendButton.isHidden = false
         }
     }
     
@@ -165,9 +177,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             vc.photo = self.photo
             vc.user = self.user
         } else if segue.identifier == "choosePhotosSegue" {
-            let vc = segue.destination as! NFPickerViewController
+            let vc = segue.destination as! CameraPickerViewController
             vc.photos = self.photosTaken
         }
+    }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
     }
     
     func switchCamera() {

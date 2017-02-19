@@ -37,7 +37,7 @@
 		33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */; };
 		33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */; };
 		33E208BB1E58F882007BFC80 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */; };
-		33E208BD1E592178007BFC80 /* NFPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E208BC1E592178007BFC80 /* NFPickerViewController.swift */; };
+		33E208BD1E592178007BFC80 /* CameraPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E208BC1E592178007BFC80 /* CameraPickerViewController.swift */; };
 		574D458AF96C11D356C15C22 /* Pods_LYK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759243CCD8DDC71157600A96 /* Pods_LYK.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,7 @@
 		33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemHeader.xib; sourceTree = "<group>"; };
 		33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemPhotoCell.xib; sourceTree = "<group>"; };
 		33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
-		33E208BC1E592178007BFC80 /* NFPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFPickerViewController.swift; sourceTree = "<group>"; };
+		33E208BC1E592178007BFC80 /* CameraPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPickerViewController.swift; sourceTree = "<group>"; };
 		35383A750A64DD6DC57FF324 /* Pods-LYK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.release.xcconfig"; sourceTree = "<group>"; };
 		759243CCD8DDC71157600A96 /* Pods_LYK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A42AFE2116A7BD1BEFB24A /* Pods-LYK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		33DD6A921E2EA799008475CB /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				33E208B91E58F873007BFC80 /* Custom */,
+				33E208B91E58F873007BFC80 /* Extensions */,
 				33DD6A941E2EA7EB008475CB /* Main */,
 				3363FFC01E3D49E100745EC9 /* Log In */,
 				33DD6A961E2EA868008475CB /* Feed */,
@@ -277,7 +277,6 @@
 				337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */,
 				330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */,
 				3307167B1E58F10300CBBE4F /* CardView.swift */,
-				33E208BC1E592178007BFC80 /* NFPickerViewController.swift */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -293,6 +292,7 @@
 		33DD6A991E2EA891008475CB /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				33E208BC1E592178007BFC80 /* CameraPickerViewController.swift */,
 				33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */,
 				33DD6A861E2D4ABD008475CB /* CameraViewController.swift */,
 			);
@@ -316,12 +316,12 @@
 			name = Feed;
 			sourceTree = "<group>";
 		};
-		33E208B91E58F873007BFC80 /* Custom */ = {
+		33E208B91E58F873007BFC80 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */,
 			);
-			name = Custom;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		42133A523C9AF980F3536B02 /* Frameworks */ = {
@@ -548,7 +548,7 @@
 				337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */,
 				33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */,
 				330716761E58CA6B00CBBE4F /* User.swift in Sources */,
-				33E208BD1E592178007BFC80 /* NFPickerViewController.swift in Sources */,
+				33E208BD1E592178007BFC80 /* CameraPickerViewController.swift in Sources */,
 				33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */,
 				33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */,
 				3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */,

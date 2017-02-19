@@ -107,7 +107,7 @@
         <scene sceneID="fa9-6h-Dub">
             <objects>
                 <viewController storyboardIdentifier="NewsFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OFF-C4-Soj" customClass="NewsFeedViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a76-lh-wcc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a76-lh-wcc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,7 +144,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.78738981485366821" green="0.24644413590431213" blue="0.27221894264221191" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="PQH-sE-Hxx"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -177,10 +177,6 @@
                                 <rect key="frame" x="310" y="30" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-b6-PaK">
-                                <rect key="frame" x="35" y="591" width="59" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-he-dz9">
                                 <rect key="frame" x="152" y="575" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -189,6 +185,15 @@
                                     <action selector="takePhoto:" destination="Lz4-tF-w4E" eventType="touchUpInside" id="hSO-F3-97d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-Qv-sPi">
+                                <rect key="frame" x="317" y="609" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="send"/>
+                            </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-b6-PaK">
+                                <rect key="frame" x="35" y="591" width="59" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -196,6 +201,7 @@
                         <outlet property="cameraButton" destination="mqu-he-dz9" id="GLH-G2-KYX"/>
                         <outlet property="picturesTakenImageView" destination="G5E-b6-PaK" id="8Ha-R7-6lo"/>
                         <outlet property="previewLayer" destination="Ofw-eK-D6Q" id="85L-MW-uYd"/>
+                        <outlet property="sendButton" destination="ChP-Qv-sPi" id="cIq-QA-xGZ"/>
                         <outlet property="switchCameraImageView" destination="QKq-Q2-PHG" id="Xe8-oZ-zYT"/>
                         <segue destination="zW1-MF-SDr" kind="presentation" identifier="photoSegue" animates="NO" modalPresentationStyle="fullScreen" id="RDz-kd-B5j"/>
                         <segue destination="unQ-hf-8ek" kind="presentation" identifier="choosePhotosSegue" modalTransitionStyle="crossDissolve" id="jUm-o6-hwV"/>
@@ -205,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="366.56671664167919"/>
         </scene>
-        <!--Picker View Controller-->
+        <!--Camera Picker View Controller-->
         <scene sceneID="CKa-HS-xBj">
             <objects>
-                <viewController id="unQ-hf-8ek" customClass="NFPickerViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="unQ-hf-8ek" customClass="CameraPickerViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aUM-U7-YhG"/>
                         <viewControllerLayoutGuide type="bottom" id="xOn-Gt-0tp"/>
@@ -218,24 +224,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-xc-IjL" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="12" y="83" width="350" height="501"/>
+                                <rect key="frame" x="12" y="83" width="350" height="465"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB1-TO-Df9">
-                                <rect key="frame" x="169" y="617" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0L-nE-inU">
+                                <rect key="frame" x="63" y="576" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="close"/>
+                                <state key="normal" image="dontlike"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLl-xo-5JP">
+                                <rect key="frame" x="266" y="576" width="53" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="notliked"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWk-VH-Wdh">
+                                <rect key="frame" x="167" y="607" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="kolodaView" destination="XrH-xc-IjL" id="5mm-X4-V7W"/>
+                        <segue destination="T1y-dp-JCo" kind="unwind" identifier="unwindFromPicker" unwindAction="prepareForUnwindWithSegue:" id="K9F-zK-Me5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58r-Nr-QRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T1y-dp-JCo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="367"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="366.56671664167919"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="zLO-SD-sli">
@@ -539,7 +557,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="238" height="238"/>
+        <image name="dontlike" width="160" height="159"/>
         <image name="flipCameraBack" width="67" height="67"/>
         <image name="flipCameraFront" width="71" height="71"/>
+        <image name="notliked" width="291" height="273"/>
+        <image name="send" width="108" height="108"/>
     </resources>
 </document>
