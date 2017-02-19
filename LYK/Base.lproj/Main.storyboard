@@ -144,7 +144,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.111818932" green="0.11183650050000001" blue="0.1118125319" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="PQH-sE-Hxx"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -198,11 +198,44 @@
                         <outlet property="previewLayer" destination="Ofw-eK-D6Q" id="85L-MW-uYd"/>
                         <outlet property="switchCameraImageView" destination="QKq-Q2-PHG" id="Xe8-oZ-zYT"/>
                         <segue destination="zW1-MF-SDr" kind="presentation" identifier="photoSegue" animates="NO" modalPresentationStyle="fullScreen" id="RDz-kd-B5j"/>
+                        <segue destination="unQ-hf-8ek" kind="presentation" identifier="choosePhotosSegue" modalTransitionStyle="crossDissolve" id="jUm-o6-hwV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krk-H0-GiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="366.56671664167919"/>
+        </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="CKa-HS-xBj">
+            <objects>
+                <viewController id="unQ-hf-8ek" customClass="NFPickerViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aUM-U7-YhG"/>
+                        <viewControllerLayoutGuide type="bottom" id="xOn-Gt-0tp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5sB-I4-rk4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-xc-IjL" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="12" y="83" width="350" height="501"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB1-TO-Df9">
+                                <rect key="frame" x="169" y="617" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="close"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="kolodaView" destination="XrH-xc-IjL" id="5mm-X4-V7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58r-Nr-QRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="367"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="zLO-SD-sli">
@@ -251,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBa-pN-9h9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5999999999999" y="366.56671664167919"/>
+            <point key="canvasLocation" x="2193" y="367"/>
         </scene>
         <!--Messages-->
         <scene sceneID="MHk-Ku-WpS">

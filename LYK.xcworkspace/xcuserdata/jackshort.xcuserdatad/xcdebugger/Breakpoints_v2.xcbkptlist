@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LYK/CameraViewController.swift"
-            timestampString = "509149630.174234"
+            timestampString = "509158309.624441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -53,6 +53,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         singleTap.numberOfTapsRequired = 1
         self.switchCameraImageView.addGestureRecognizer(singleTap)
         
+        //remove photos
+        let tapOnPhotos = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.removePhotos))
+        tapOnPhotos.numberOfTapsRequired = 1
+        self.picturesTakenImageView.addGestureRecognizer(tapOnPhotos)
+        self.picturesTakenImageView.isUserInteractionEnabled = false
+        
         // setup preview past pictures
         self.photosTaken = [UIImage]()
         self.picturesTakenImageView.layer.masksToBounds = true
@@ -148,6 +154,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             
             self.picturesTakenImageView.isHidden = false
             self.picturesTakenImageView.image = self.photo
+            self.picturesTakenImageView.isUserInteractionEnabled = true
             self.photosTaken.append(self.photo!)
         }
     }
@@ -157,6 +164,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             let vc = segue.destination as! ImageViewController
             vc.photo = self.photo
             vc.user = self.user
+        } else if segue.identifier == "choosePhotosSegue" {
+            let vc = segue.destination as! NFPickerViewController
+            vc.photos = self.photosTaken
         }
     }
     
@@ -165,5 +175,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.setupCamera(back: self.switchCameraImageView.isHighlighted)
         self.switchCameraImageView.isHighlighted = !self.switchCameraImageView.isHighlighted
         self.isBackFacing = !self.switchCameraImageView.isHighlighted;
+    }
+    
+    func removePhotos() {
+        performSegue(withIdentifier: "choosePhotosSegue", sender: self)
     }
 }
