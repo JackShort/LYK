@@ -23,7 +23,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var userLoaded: Bool = false
     
     var photosData: [String: [String: AnyObject]]!
-    var photoIds: [String]!
+    var postIds: [String]!
     
     var photoToUse: UIImage!
     
@@ -35,7 +35,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         self.storageRef = self.storage.reference()
         self.ref = FIRDatabase.database().reference()
         
-        self.photoIds = []
+        self.postIds = []
         self.photosData = [String: [String: AnyObject]]()
         
 //        let dataRef = self.storageRef.child(self.currentUser.uid).child("test").child("test.png")
@@ -96,8 +96,13 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
                     "hasLoadedPhotos": false as AnyObject
                     ] as [String : AnyObject]
                 
+                print("we retrieved basic data and fetching photos")
+                
                 self.photosData[postId] = data
+                self.postIds.append(postId)
                 self.getPhotos(photos: photos, uid: uid, postId: postId)
+                
+                self.tableView.reloadData()
             })
         }
     }
@@ -144,32 +149,32 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
 //        })
 //    }
     
-    func getImage(photoData: NSDictionary, photoId: String) {
-        let uid = photoData["uid"] as! String
-        let username = photoData["username"] as! String
-        let title = photoData["title"] as! String
-        let photoPath = self.storageRef.child(uid).child(photoId + ".png")
-        photoPath.data(withMaxSize: 10 * 1024 * 1024) { (data, error) in
-            if let error = error {
-                print("uh oh error when downloading photo")
-                print(error.localizedDescription)
-            } else {
-                let downloadedImage = UIImage(data: data!)
-                let imageRef = downloadedImage?.cgImage
-                let image = UIImage(cgImage: imageRef!, scale: 1.0, orientation: UIImageOrientation.right)
-                
-                self.photoIds?.append(photoId)
-                self.photosData?[photoId] = [
-                    "photo": image,
-                    "uid": uid as AnyObject,
-                    "username": username as AnyObject,
-                    "title": title as AnyObject
-                ]
-                
-                self.tableView.reloadData()
-            }
-        }
-    }
+//    func getImage(photoData: NSDictionary, photoId: String) {
+//        let uid = photoData["uid"] as! String
+//        let username = photoData["username"] as! String
+//        let title = photoData["title"] as! String
+//        let photoPath = self.storageRef.child(uid).child(photoId + ".png")
+//        photoPath.data(withMaxSize: 10 * 1024 * 1024) { (data, error) in
+//            if let error = error {
+//                print("uh oh error when downloading photo")
+//                print(error.localizedDescription)
+//            } else {
+//                let downloadedImage = UIImage(data: data!)
+//                let imageRef = downloadedImage?.cgImage
+//                let image = UIImage(cgImage: imageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+//                
+//                self.photoIds?.append(photoId)
+//                self.photosData?[photoId] = [
+//                    "photo": image,
+//                    "uid": uid as AnyObject,
+//                    "username": username as AnyObject,
+//                    "title": title as AnyObject
+//                ]
+//                
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
@@ -180,7 +185,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.photosData.keys.count
+        return self.postIds.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -189,18 +194,20 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NFPostCell") as! NFPostCell
-        let photoId = self.photoIds[indexPath.row]
-        let photoData = self.photosData[photoId]!
+        let postId = self.postIds[indexPath.row]
+        let postData = self.photosData[postId]!
         
-        let username = photoData["username"] as! String
-        let uid = photoData["uid"] as! String
-        let photo = photoData["photo"] as! UIImage
-        let title = photoData["title"] as! String
+        print("we are heare")
+        
+        let username = postData["username"] as! String
+        let uid = postData["uid"] as! String
+        let title = postData["title"] as! String
+        let hasLoaded = postData["hasLoadedPhotos"] as! Bool
         
         cell.setUsernameLabel(name: username)
-        cell.previewImageView.image = photo
+//        cell.previewImageView.image = photo
         cell.titleLabel.text = title
-        cell.setPhoto(photo: photo)
+//        cell.setPhoto(photo: photo)
         
         return cell
     }
