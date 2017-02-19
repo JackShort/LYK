@@ -17,7 +17,6 @@ class CardView: UIView {
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.size.height / 32
-        imageView.image = UIImage(named: "placeholder_image")
     }
     
     func setImage(image: UIImage) {

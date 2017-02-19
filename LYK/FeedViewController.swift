@@ -62,7 +62,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "feedCell")! as! FeedTableViewCell
         
         cell.groupNameLabel.text = "Jack"
-        cell.contextLabel.text = "Jackson: I hate jack"
+        cell.contextLabel.text = "Jackson: Hello"
         
         return cell
     }

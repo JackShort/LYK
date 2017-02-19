@@ -19,7 +19,8 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
     var currentUser: FIRUser!
     var ref: FIRDatabaseReference!
     
-    var nfView: NewsFeedViewController!
+//    var nfView: NewsFeedViewController!
+    var nfView: NFViewController!
     var fView: FeedViewController!
     var cameraView: CameraViewController!
     
@@ -57,32 +58,20 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
             let friendsDict = value["friends"] as? NSDictionary
             let uid = self.currentUser.uid
             
-            guard let photos = (value["photos"] as? NSDictionary)?.allKeys as? [String] else {
-                let photos = [String]()
-                
-                if friendsDict == nil {
-                    self.user = User(uid: uid, username: username, photos: photos)
-                } else {
-                    let friends = friendsDict?.allKeys as! [String]
-                    self.user = User(uid: uid, username: username, friends: friends, photos: photos)
-                }
-                
-                self.cameraView.user = self.user
-                self.nfView.user = self.user
-                self.fView.user = self.user
-                
-                return
-            }
-            
             if friendsDict == nil {
-                self.user = User(uid: uid, username: username, photos: photos)
+                self.user = User(uid: uid, username: username)
             } else {
                 let friends = friendsDict?.allKeys as! [String]
-                self.user = User(uid: uid, username: username, friends: friends, photos: photos)
+                self.user = User(uid: uid, username: username, friends: friends)
             }
             
             self.cameraView.user = self.user
             self.nfView.user = self.user
+            if self.nfView.isViewLoaded {
+                self.nfView.setUserLoaded(b: true)
+            } else {
+                self.nfView.userLoaded = true
+            }
             self.fView.user = self.user
         })
     }
@@ -93,9 +82,11 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         
         let feedTabBarController: UITabBarController = sb.instantiateViewController(withIdentifier: "FeedTabBarController") as! UITabBarController
         let cameraViewController: CameraViewController = sb.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
-        let newsFeedViewController: UINavigationController = sb.instantiateViewController(withIdentifier: "NFNavigationController") as! UINavigationController
+//        let newsFeedViewController: UINavigationController = sb.instantiateViewController(withIdentifier: "NFNavigationController") as! UINavigationController
+        let newsFeedViewController: NFViewController = sb.instantiateViewController(withIdentifier: "NFViewController") as! NFViewController
         
-        self.nfView = newsFeedViewController.viewControllers[0] as! NewsFeedViewController
+//        self.nfView = newsFeedViewController.viewControllers[0] as! NewsFeedViewController
+        self.nfView = newsFeedViewController
         let fnav = feedTabBarController.viewControllers?[0] as! UINavigationController
         self.fView = fnav.viewControllers[0] as! FeedViewController
         self.cameraView = cameraViewController

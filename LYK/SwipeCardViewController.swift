@@ -13,7 +13,7 @@ import Koloda
 class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     @IBOutlet weak var kolodaView: KolodaView!
     
-    var image: UIImage!
+    var photos: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
     
     // koloda functions 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        return 1
+        return self.photos.count
     }
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
@@ -41,7 +41,7 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let cardView = CardView.instanceFromNib() as! CardView
-        cardView.imageView.image = self.image
+        cardView.imageView.image = self.photos[index]
         
         return cardView
     }

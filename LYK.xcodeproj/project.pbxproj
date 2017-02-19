@@ -15,6 +15,7 @@
 		3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */; };
 		3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */; };
 		3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */; };
+		336B412C1E59A01A0000ABD0 /* NFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B412B1E59A01A0000ABD0 /* NFViewController.swift */; };
 		337A09271E500EBB009DFC9A /* NFPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337A09261E500EBB009DFC9A /* NFPostCell.xib */; };
 		337A09291E500ECB009DFC9A /* NFPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A09281E500ECB009DFC9A /* NFPostCell.swift */; };
 		337A092B1E500F54009DFC9A /* NFItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */; };
@@ -67,6 +68,7 @@
 		3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3363FFC61E3D4AEF00745EC9 /* StartUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
+		336B412B1E59A01A0000ABD0 /* NFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFViewController.swift; sourceTree = "<group>"; };
 		337A09261E500EBB009DFC9A /* NFPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFPostCell.xib; sourceTree = "<group>"; };
 		337A09281E500ECB009DFC9A /* NFPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFPostCell.swift; sourceTree = "<group>"; };
 		337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFItemHeaderView.xib; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */,
 				330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */,
 				3307167B1E58F10300CBBE4F /* CardView.swift */,
+				336B412B1E59A01A0000ABD0 /* NFViewController.swift */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336B412C1E59A01A0000ABD0 /* NFViewController.swift in Sources */,
 				3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */,
 				33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */,
 				33DD6A8B1E2E86EB008475CB /* PostImageViewController.swift in Sources */,

@@ -15,6 +15,7 @@ class CameraPickerViewController: UIViewController, KolodaViewDelegate, KolodaVi
     
     var photos: [UIImage]!
     var goodPhotos: [UIImage]!
+    var shouldSetPhotos: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,10 @@ class CameraPickerViewController: UIViewController, KolodaViewDelegate, KolodaVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindFromPicker" {
             let vc = segue.destination as! CameraViewController
-            vc.setPhotosTaken(photos: self.goodPhotos)
+            
+            if shouldSetPhotos {
+                vc.setPhotosTaken(photos: self.goodPhotos)
+            }
         }
     }
     
@@ -56,5 +60,18 @@ class CameraPickerViewController: UIViewController, KolodaViewDelegate, KolodaVi
         let cardView = CardView.instanceFromNib() as! CardView
         cardView.imageView.image = self.photos[index]
         return cardView
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.shouldSetPhotos = false
+        self.performSegue(withIdentifier: "unwindFromPicker", sender: self)
+    }
+    
+    @IBAction func liked(_ sender: Any) {
+        self.kolodaView.swipe(.right)
+    }
+    
+    @IBAction func disliked(_ sender: Any) {
+        self.kolodaView.swipe(.left)
     }
 }

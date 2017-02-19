@@ -103,6 +103,54 @@
             </objects>
             <point key="canvasLocation" x="132" y="368"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OoO-Bt-F41">
+            <objects>
+                <viewController storyboardIdentifier="NFViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FPx-L3-BYQ" customClass="NFViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4A-IJ-IaZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Etc-gF-cwV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EbR-17-bgM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Car-MY-fGi">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hLh-tK-Pdg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NFPostCell" id="Da9-UP-ngE">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="FPx-L3-BYQ" id="NVV-TF-ST5"/>
+                                    <outlet property="delegate" destination="FPx-L3-BYQ" id="4D5-vv-vEK"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Car-MY-fGi" id="16i-It-xYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vl3-19-eOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="1046.6266866566718"/>
+        </scene>
         <!--News Feed View Controller-->
         <scene sceneID="fa9-6h-Dub">
             <objects>
@@ -125,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfO-Ga-EAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="1038"/>
+            <point key="canvasLocation" x="801" y="1860"/>
         </scene>
         <!--Swipe Card View Controller-->
         <scene sceneID="NKy-6C-zxG">
@@ -140,9 +188,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-xg-NiK" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="12" y="93" width="350" height="501"/>
+                                <rect key="frame" x="12" y="28" width="350" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWu-a6-l4C">
+                                <rect key="frame" x="41" y="594" width="53" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="dontlike"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioQ-nm-a3t">
+                                <rect key="frame" x="279" y="594" width="53" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="notliked"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78738981485366821" green="0.24644413590431213" blue="0.27221894264221191" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -154,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CG4-Fx-I6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="1038"/>
+            <point key="canvasLocation" x="1462" y="1860"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="0wx-3d-9Fy">
@@ -229,21 +287,31 @@
                                 <rect key="frame" x="63" y="576" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="dontlike"/>
+                                <connections>
+                                    <action selector="disliked:" destination="unQ-hf-8ek" eventType="touchUpInside" id="KJl-X3-x7c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLl-xo-5JP">
                                 <rect key="frame" x="266" y="576" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="notliked"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWk-VH-Wdh">
-                                <rect key="frame" x="167" y="607" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="liked:" destination="unQ-hf-8ek" eventType="touchUpInside" id="Byf-LW-PZI"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-xc-IjL" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="12" y="83" width="350" height="465"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV5-tB-26q">
+                                <rect key="frame" x="16" y="28" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="close:" destination="unQ-hf-8ek" eventType="touchUpInside" id="lpr-rg-0eU"/>
+                                    <action selector="liked:" destination="unQ-hf-8ek" eventType="touchUpInside" id="Jyy-t9-MEN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -550,11 +618,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccd-pO-yH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="1038"/>
+            <point key="canvasLocation" x="132" y="1860"/>
         </scene>
     </scenes>
     <resources>
-        <image name="close" width="238" height="238"/>
+        <image name="close" width="246" height="246"/>
         <image name="dontlike" width="160" height="159"/>
         <image name="flipCameraBack" width="67" height="67"/>
         <image name="flipCameraFront" width="71" height="71"/>

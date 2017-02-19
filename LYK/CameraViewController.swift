@@ -175,7 +175,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postPhotoSegue" {
             let vc = segue.destination as! PostImageViewController
-            print(self.photosTaken)
             vc.photos = self.photosTaken
             vc.user = self.user
         } else if segue.identifier == "choosePhotosSegue" {

@@ -14,16 +14,21 @@ class NFPostCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var previewImageView: UIImageView!
     
-    var photo: UIImage!
+    var photos: [UIImage]!
     var color: UIColor!
+    var photoHasBeenSet: Bool = false
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         self.color = UIColor.randomFlat()
         
-        self.contentView.layer.borderWidth = 2
+        self.contentView.layer.borderWidth = 1
         self.contentView.layer.borderColor = UIColor.flatGray().cgColor
+        
+        if !photoHasBeenSet {
+            self.previewImageView.image = UIImage(named: "placeholder_image")
+        }
         
 //        self.contentView.layer.cornerRadius = self.contentView.frame.size.height / 8
 //        self.contentView.layer.masksToBounds = true
@@ -34,12 +39,17 @@ class NFPostCell: UITableViewCell {
         self.usernameLabel.text = name
     }
     
-    func setPhoto(photo: UIImage) {
+    func setPhotos(photos: [UIImage]) {
+        let photo = photos.last
+        photoHasBeenSet = true
+        self.previewImageView.image = photo
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.previewImageView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.previewImageView.addSubview(blurEffectView)
-        self.photo = photo
+        
+        self.photos = photos
     }
 }

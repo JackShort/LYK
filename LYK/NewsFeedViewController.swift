@@ -25,7 +25,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var photosData: [String: [String: AnyObject]]!
     var postIds: [String]!
     
-    var photoToUse: UIImage!
+    var photosToUse: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,14 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatWhite()]
         self.title = "LYK"
         
-        // load data
+        // load the shit if able
+        if userLoaded {
+            self.load()
+        }
+    }
+    
+    func setUserLoaded(b: Bool) {
+        self.userLoaded = b
         self.load()
     }
     
@@ -197,17 +204,18 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let postId = self.postIds[indexPath.row]
         let postData = self.photosData[postId]!
         
-        print("we are heare")
-        
         let username = postData["username"] as! String
         let uid = postData["uid"] as! String
         let title = postData["title"] as! String
         let hasLoaded = postData["hasLoadedPhotos"] as! Bool
         
         cell.setUsernameLabel(name: username)
-//        cell.previewImageView.image = photo
         cell.titleLabel.text = title
-//        cell.setPhoto(photo: photo)
+        
+        if hasLoaded {
+            let photos = postData["photos"] as! [UIImage]
+            cell.setPhotos(photos: photos)
+        }
         
         return cell
     }
@@ -216,13 +224,13 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.deselectRow(at: indexPath, animated: false)
         
         let cell = tableView.cellForRow(at: indexPath) as! NFPostCell
-        self.photoToUse = cell.photo
+        self.photosToUse = cell.photos
         
         self.performSegue(withIdentifier: "showSwipeCards", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! SwipeCardViewController
-        vc.image = self.photoToUse
+        vc.photos = self.photosToUse
     }
 }
