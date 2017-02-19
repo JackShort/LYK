@@ -12,4 +12,5 @@ target 'LYK' do
     pod 'SDWebImage', '~>3.8'
     pod 'ChameleonFramework/Swift'
     pod 'Koloda'
+    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 end

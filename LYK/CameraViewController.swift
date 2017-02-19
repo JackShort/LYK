@@ -166,15 +166,17 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             self.picturesTakenImageView.image = self.photo
             self.picturesTakenImageView.isUserInteractionEnabled = true
             self.photosTaken.append(self.photo!)
+            print("took photo")
             
             self.sendButton.isHidden = false
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "photoSegue" {
-            let vc = segue.destination as! ImageViewController
-            vc.photo = self.photo
+        if segue.identifier == "postPhotoSegue" {
+            let vc = segue.destination as! PostImageViewController
+            print(self.photosTaken)
+            vc.photos = self.photosTaken
             vc.user = self.user
         } else if segue.identifier == "choosePhotosSegue" {
             let vc = segue.destination as! CameraPickerViewController
@@ -183,6 +185,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func prepareForSegueFromPosting(segue: UIStoryboardSegue) {
     }
     
     func switchCamera() {

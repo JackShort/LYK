@@ -33,7 +33,7 @@
 		33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */; };
 		33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A861E2D4ABD008475CB /* CameraViewController.swift */; };
 		33DD6A891E2D4BF1008475CB /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */; };
-		33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */; };
+		33DD6A8B1E2E86EB008475CB /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A8A1E2E86EB008475CB /* PostImageViewController.swift */; };
 		33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */; };
 		33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */; };
 		33E208BB1E58F882007BFC80 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */; };
@@ -91,7 +91,7 @@
 		33DD6A841E2D4A94008475CB /* ContainerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
 		33DD6A861E2D4ABD008475CB /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		33DD6A881E2D4BF1008475CB /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
-		33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		33DD6A8A1E2E86EB008475CB /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
 		33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemHeader.xib; sourceTree = "<group>"; };
 		33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemPhotoCell.xib; sourceTree = "<group>"; };
 		33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				33E208BC1E592178007BFC80 /* CameraPickerViewController.swift */,
-				33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */,
+				33DD6A8A1E2E86EB008475CB /* PostImageViewController.swift */,
 				33DD6A861E2D4ABD008475CB /* CameraViewController.swift */,
 			);
 			name = Camera;
@@ -538,7 +538,7 @@
 			files = (
 				3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */,
 				33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */,
-				33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */,
+				33DD6A8B1E2E86EB008475CB /* PostImageViewController.swift in Sources */,
 				337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */,
 				3363FFC71E3D4AEF00745EC9 /* StartUpViewController.swift in Sources */,
 				330716781E58DC8100CBBE4F /* SwipeCardViewController.swift in Sources */,

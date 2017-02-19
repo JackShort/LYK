@@ -189,6 +189,9 @@
                                 <rect key="frame" x="317" y="609" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <segue destination="zW1-MF-SDr" kind="presentation" identifier="postPhotoSegue" modalTransitionStyle="crossDissolve" id="LT2-0c-j8g"/>
+                                </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-b6-PaK">
                                 <rect key="frame" x="35" y="591" width="59" height="58"/>
@@ -203,7 +206,6 @@
                         <outlet property="previewLayer" destination="Ofw-eK-D6Q" id="85L-MW-uYd"/>
                         <outlet property="sendButton" destination="ChP-Qv-sPi" id="cIq-QA-xGZ"/>
                         <outlet property="switchCameraImageView" destination="QKq-Q2-PHG" id="Xe8-oZ-zYT"/>
-                        <segue destination="zW1-MF-SDr" kind="presentation" identifier="photoSegue" animates="NO" modalPresentationStyle="fullScreen" id="RDz-kd-B5j"/>
                         <segue destination="unQ-hf-8ek" kind="presentation" identifier="choosePhotosSegue" modalTransitionStyle="crossDissolve" id="jUm-o6-hwV"/>
                     </connections>
                 </viewController>
@@ -223,10 +225,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-xc-IjL" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="12" y="83" width="350" height="465"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0L-nE-inU">
                                 <rect key="frame" x="63" y="576" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -242,6 +240,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-xc-IjL" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="12" y="83" width="350" height="465"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -255,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="1461.5999999999999" y="366.56671664167919"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Post Image View Controller-->
         <scene sceneID="zLO-SD-sli">
             <objects>
-                <viewController id="zW1-MF-SDr" customClass="ImageViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zW1-MF-SDr" customClass="PostImageViewController" customModule="LYK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ORE-eE-9gu"/>
                         <viewControllerLayoutGuide type="bottom" id="ZEs-kx-6Bu"/>
@@ -267,42 +269,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-2c-oTW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-xk-OdA">
+                                <rect key="frame" x="16" y="75" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnS-L4-s3F">
-                                <rect key="frame" x="24" y="28" width="30" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-Rq-BhP">
+                                <rect key="frame" x="16" y="161" width="343" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="x">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancel:" destination="zW1-MF-SDr" eventType="touchUpInside" id="ze0-Jn-K9b"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4D-OO-w83">
-                                <rect key="frame" x="160" y="617" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Post">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="post:" destination="zW1-MF-SDr" eventType="touchUpInside" id="AO4-Xa-i1l"/>
+                                    <action selector="postToFriends:" destination="zW1-MF-SDr" eventType="touchUpInside" id="h6H-yU-gIP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="jOR-2c-oTW" id="8Fc-qY-C7E"/>
+                        <outlet property="titleTextField" destination="tm7-xk-OdA" id="ZWM-52-6Hh"/>
+                        <segue destination="tJz-1c-Bi4" kind="unwind" identifier="unwindPost" unwindAction="prepareForSegueFromPostingWithSegue:" id="OjS-R7-1ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBa-pN-9h9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tJz-1c-Bi4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2193" y="367"/>
+            <point key="canvasLocation" x="2192.8000000000002" y="366.56671664167919"/>
         </scene>
         <!--Messages-->
         <scene sceneID="MHk-Ku-WpS">
