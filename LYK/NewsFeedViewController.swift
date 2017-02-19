@@ -19,6 +19,8 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var ref: FIRDatabaseReference!
     var currentUser: FIRUser!
     var user: User!
+    //implement this
+    var userLoaded: Bool = false
     
     var photosData: [String: [String: AnyObject]]!
     var photoIds: [String]!
@@ -61,30 +63,86 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func load() {
-        let myPhotosRef = ref.child("users").child(self.currentUser.uid).child("photos")
-        myPhotosRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let photosDict = snapshot.value as? NSDictionary
-            let photos = photosDict?.allKeys as? [String]
-            
-            guard photos != nil else {
-                return
-            }
-            
-            for photoId in photos! {
-                self.getPhotos(photoId: photoId)
-            }
-        })
+//        let myPhotosRef = ref.child("users").child(self.currentUser.uid).child("photos")
+//        myPhotosRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            let photosDict = snapshot.value as? NSDictionary
+//            let photos = photosDict?.allKeys as? [String]
+//            
+//            guard photos != nil else {
+//                return
+//            }
+//            
+//            for photoId in photos! {
+//                self.getPhotos(photoId: photoId)
+//            }
+//        })
+        
+        for friend in self.user.friends{
+            self.ref.child("posts").queryOrdered(byChild: friend).observeSingleEvent(of: .value, with: { (snapshot) in
+                var value = snapshot.value as! NSDictionary
+                let postId = value.allKeys[0] as! String
+                value = value[postId] as! NSDictionary
+                
+                let username = value["username"] as! String
+                let title = value["title"] as! String
+                let uid = value["uid"] as! String
+                let photos = value["photos"] as! [String]
+                
+                let data = [
+                    "photos": [UIImage]() as AnyObject,
+                    "username": username as AnyObject,
+                    "title": title as AnyObject,
+                    "uid": uid as AnyObject,
+                    "hasLoadedPhotos": false as AnyObject
+                    ] as [String : AnyObject]
+                
+                self.photosData[postId] = data
+                self.getPhotos(photos: photos, uid: uid, postId: postId)
+            })
+        }
     }
     
-    func getPhotos(photoId: String) {
-        let photoRef = self.ref.child("photos").child(photoId)
-        photoRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
+    func getPhotos(photos: [String], uid: String, postId: String) {
+        let capPhotos: Int = photos.count
+        var counter: Int = 0
+        
+        for photo in photos {
+            let photoPath = self.storageRef.child(uid).child("posts").child(photo + ".png")
             
-            self.getImage(photoData: value!, photoId: photoId)
-            print("fetching photo...")
-        })
+            photoPath.data(withMaxSize: 10 * 1024 * 1024) { (data, error) in
+                if let error = error {
+                    print("uh oh error when downloading photo")
+                    print(error.localizedDescription)
+                } else {
+                    let downloadedImage = UIImage(data: data!)
+                    let imageRef = downloadedImage?.cgImage
+                    let image = UIImage(cgImage: imageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+                    
+                    var photoArr = self.photosData[postId]?["photos"] as! [UIImage]
+                    photoArr.append(image)
+                    self.photosData[postId]?["photos"] = photoArr as AnyObject
+                    
+                    counter += 1
+                    
+                    if counter == capPhotos {
+                        self.photosData[postId]?["hasLoadedPhotos"] = true as AnyObject
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+        }
     }
+ 
+//    func getPhotos(photoId: String) {
+//        let photoRef = self.ref.child("photos").child(photoId)
+//        photoRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//
+//            self.getImage(photoData: value!, photoId: photoId)
+//            print("fetching photo...")
+//        })
+//    }
     
     func getImage(photoData: NSDictionary, photoId: String) {
         let uid = photoData["uid"] as! String
@@ -122,7 +180,7 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.photoIds.count
+        return self.photosData.keys.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

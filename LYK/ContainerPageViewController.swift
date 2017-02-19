@@ -54,11 +54,18 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         self.ref.child("users").child(self.currentUser.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             let username = value["username"] as! String
+            let friendsDict = value["friends"] as? NSDictionary
             let uid = self.currentUser.uid
             
             guard let photos = (value["photos"] as? NSDictionary)?.allKeys as? [String] else {
                 let photos = [String]()
-                self.user = User(uid: uid, username: username, photos: photos)
+                
+                if friendsDict == nil {
+                    self.user = User(uid: uid, username: username, photos: photos)
+                } else {
+                    let friends = friendsDict?.allKeys as! [String]
+                    self.user = User(uid: uid, username: username, friends: friends, photos: photos)
+                }
                 
                 self.cameraView.user = self.user
                 self.nfView.user = self.user
@@ -66,7 +73,13 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
                 
                 return
             }
-            self.user = User(uid: uid, username: username, photos: photos)
+            
+            if friendsDict == nil {
+                self.user = User(uid: uid, username: username, photos: photos)
+            } else {
+                let friends = friendsDict?.allKeys as! [String]
+                self.user = User(uid: uid, username: username, friends: friends, photos: photos)
+            }
             
             self.cameraView.user = self.user
             self.nfView.user = self.user

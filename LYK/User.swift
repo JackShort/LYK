@@ -12,11 +12,20 @@ class User {
     var username: String
     var uid: String
     var photos: [String]
+    var friends: [String]
     
     init(uid: String, username: String, photos: [String]) {
         self.username = username
         self.uid = uid
         self.photos = photos
+        self.friends = [String]()
+    }
+    
+    init(uid: String, username: String, friends: [String], photos: [String]) {
+        self.username = username
+        self.uid = uid
+        self.photos = photos
+        self.friends = friends
     }
     
     var description : String {
