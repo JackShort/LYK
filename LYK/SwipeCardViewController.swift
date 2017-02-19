@@ -14,12 +14,15 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
     @IBOutlet weak var kolodaView: KolodaView!
     
     var photos: [UIImage]!
+    var color: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        self.view.backgroundColor = self.color
         
         self.navigationController?.navigationBar.barTintColor = UIColor.flatBlack()
         self.navigationController?.navigationBar.tintColor = UIColor.flatWhite()
@@ -44,5 +47,13 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
         cardView.imageView.image = self.photos[index]
         
         return cardView
+    }
+    
+    @IBAction func dislike(_ sender: Any) {
+        self.kolodaView.swipe(.left)
+    }
+    
+    @IBAction func liked(_ sender: Any) {
+        self.kolodaView.swipe(.right)
     }
 }

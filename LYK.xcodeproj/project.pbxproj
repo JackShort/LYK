@@ -23,6 +23,7 @@
 		337E37351E2D26D6001BCF2D /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */; };
 		337E37371E2D26F6001BCF2D /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E37361E2D26F6001BCF2D /* FeedTableViewCell.swift */; };
 		337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E37381E2D2E33001BCF2D /* ConversationViewController.swift */; };
+		3399ECFF1E59B34600F81B67 /* NFCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399ECFE1E59B34600F81B67 /* NFCollectionCell.swift */; };
 		33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */; };
 		33D6D2CB1E2D1E66006F6843 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */; };
 		33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D6D2CC1E2D1E66006F6843 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		337E37361E2D26F6001BCF2D /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		337E37381E2D2E33001BCF2D /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		3399ECFE1E59B34600F81B67 /* NFCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCollectionCell.swift; sourceTree = "<group>"; };
 		33D6D2C51E2D1E66006F6843 /* LYK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D6D2C81E2D1E66006F6843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D6D2CA1E2D1E66006F6843 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */,
 				3307167B1E58F10300CBBE4F /* CardView.swift */,
 				336B412B1E59A01A0000ABD0 /* NFViewController.swift */,
+				3399ECFE1E59B34600F81B67 /* NFCollectionCell.swift */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				337A09291E500ECB009DFC9A /* NFPostCell.swift in Sources */,
 				337A092D1E500F66009DFC9A /* NFItemHeaderView.swift in Sources */,
 				33DD6A831E2D35AE008475CB /* ProfileViewController.swift in Sources */,
+				3399ECFF1E59B34600F81B67 /* NFCollectionCell.swift in Sources */,
 				337E37391E2D2E33001BCF2D /* ConversationViewController.swift in Sources */,
 				33DD6A871E2D4ABD008475CB /* CameraViewController.swift in Sources */,
 				330716761E58CA6B00CBBE4F /* User.swift in Sources */,

@@ -25,6 +25,9 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
     var postIds: [String]!
     
     var photosToUse: [UIImage]!
+    var color: UIColor!
+    
+    var noColors: [Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
         //                self.testImageView.sd_setImage(with: url)
         //            }
         //        }
+        
+        self.noColors = [UIColor.flatRed(), UIColor.flatRedColorDark(), UIColor.flatSand(), UIColor.flatWhite(), UIColor.flatWhiteColorDark(), UIColor.flatSandColorDark(), UIColor.flatForestGreen(), UIColor.flatForestGreenColorDark(), UIColor.flatPurpleColorDark(), UIColor.flatBrown(), UIColor.flatBrownColorDark(), UIColor.flatPlum(), UIColor.flatPlumColorDark(), UIColor.flatWatermelonColorDark(), UIColor.flatLimeColorDark(), UIColor.flatMaroonColorDark(), UIColor.flatMaroon(), UIColor.flatCoffee(), UIColor.flatCoffeeColorDark(), UIColor.flatPowderBlueColorDark(), UIColor.flatBlue(), UIColor.flatBlueColorDark()]
         
         //collectionView Shit
         self.collectionView.dataSource = self
@@ -103,6 +108,7 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
                 self.getPhotos(photos: photos, uid: uid, postId: postId)
                 
 //                self.tableView.reloadData()
+                self.collectionView.reloadData()
             })
         }
     }
@@ -132,6 +138,7 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
                     if counter == capPhotos {
                         self.photosData[postId]?["hasLoadedPhotos"] = true as AnyObject
 //                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 }
             }
@@ -182,23 +189,7 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
     
     
     
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "NFPostCell") as! NFPostCell
-//        let postId = self.postIds[indexPath.row]
-//        let postData = self.photosData[postId]!
-//        
-//        let username = postData["username"] as! String
-//        let uid = postData["uid"] as! String
-//        let title = postData["title"] as! String
-//        let hasLoaded = postData["hasLoadedPhotos"] as! Bool
-//        
-//        cell.setUsernameLabel(name: username)
-//        cell.titleLabel.text = title
-//        
-//        if hasLoaded {
-//            let photos = postData["photos"] as! [UIImage]
-//            cell.setPhotos(photos: photos)
-//        }
-//        
+//
 //        return cell
     
 //        
@@ -210,19 +201,62 @@ class NFViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.postIds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NFPostCell", for: indexPath)
-        cell.backgroundColor = UIColor.black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NFPostCell", for: indexPath) as! NFCollectionCell
+        
+        let postId = self.postIds[indexPath.row]
+        let postData = self.photosData[postId]!
+        cell.setColor(color: UIColor(randomFlatColorExcludingColorsIn: self.noColors))
+        
+        let username = postData["username"] as! String
+        let uid = postData["uid"] as! String
+        let title = postData["title"] as! String
+        let hasLoaded = postData["hasLoadedPhotos"] as! Bool
+        
+        cell.titleLabel.text = title
+        cell.usernameLabel.text = username
+//        cell.titleLabel.text = title
+        
+        if hasLoaded {
+            let photos = postData["photos"] as! [UIImage]
+            cell.setPhotos(photos: photos)
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = self.collectionView.cellForItem(at: indexPath) as! NFCollectionCell
+        self.photosToUse = cell.photos
+        self.color = cell.color
+        
+        self.performSegue(withIdentifier: "showSwipeCards", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! SwipeCardViewController
         vc.photos = self.photosToUse
+        vc.color = self.color
     }
     
     //style shit
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width / 2
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
