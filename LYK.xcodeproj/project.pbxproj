@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		330716761E58CA6B00CBBE4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330716751E58CA6B00CBBE4F /* User.swift */; };
 		330716781E58DC8100CBBE4F /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */; };
+		3307167A1E58F0F600CBBE4F /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 330716791E58F0F600CBBE4F /* CardView.xib */; };
+		3307167C1E58F10300CBBE4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3307167B1E58F10300CBBE4F /* CardView.swift */; };
 		333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */; };
 		3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */; };
 		3363FFC41E3D4A0B00745EC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */; };
@@ -34,6 +36,7 @@
 		33DD6A8B1E2E86EB008475CB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */; };
 		33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */; };
 		33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */; };
+		33E208BB1E58F882007BFC80 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */; };
 		574D458AF96C11D356C15C22 /* Pods_LYK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759243CCD8DDC71157600A96 /* Pods_LYK.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,8 @@
 /* Begin PBXFileReference section */
 		330716751E58CA6B00CBBE4F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
+		330716791E58F0F600CBBE4F /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		3307167B1E58F10300CBBE4F /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		333F6FDD1E4A9086008D396F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3363FFC11E3D49FF00745EC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3363FFC31E3D4A0B00745EC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		33DD6A8A1E2E86EB008475CB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		33DD6A8C1E2EA68A008475CB /* ConversationItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemHeader.xib; sourceTree = "<group>"; };
 		33DD6A8E1E2EA6A1008475CB /* ConversationItemPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationItemPhotoCell.xib; sourceTree = "<group>"; };
+		33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		35383A750A64DD6DC57FF324 /* Pods-LYK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.release.xcconfig"; sourceTree = "<group>"; };
 		759243CCD8DDC71157600A96 /* Pods_LYK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A42AFE2116A7BD1BEFB24A /* Pods-LYK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYK/Pods-LYK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 			children = (
 				337A09261E500EBB009DFC9A /* NFPostCell.xib */,
 				337A092A1E500F54009DFC9A /* NFItemHeaderView.xib */,
+				330716791E58F0F600CBBE4F /* CardView.xib */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 		33DD6A921E2EA799008475CB /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				33E208B91E58F873007BFC80 /* Custom */,
 				33DD6A941E2EA7EB008475CB /* Main */,
 				3363FFC01E3D49E100745EC9 /* Log In */,
 				33DD6A961E2EA868008475CB /* Feed */,
@@ -266,6 +274,7 @@
 				337A09281E500ECB009DFC9A /* NFPostCell.swift */,
 				337A092C1E500F66009DFC9A /* NFItemHeaderView.swift */,
 				330716771E58DC8100CBBE4F /* SwipeCardViewController.swift */,
+				3307167B1E58F10300CBBE4F /* CardView.swift */,
 			);
 			name = NewsFeed;
 			sourceTree = "<group>";
@@ -302,6 +311,14 @@
 				337E37341E2D26D6001BCF2D /* FeedTableViewCell.xib */,
 			);
 			name = Feed;
+			sourceTree = "<group>";
+		};
+		33E208B91E58F873007BFC80 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				33E208BA1E58F882007BFC80 /* CustomKolodaView.swift */,
+			);
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		42133A523C9AF980F3536B02 /* Frameworks */ = {
@@ -440,6 +457,7 @@
 				337A092B1E500F54009DFC9A /* NFItemHeaderView.xib in Resources */,
 				33DD6A8D1E2EA68A008475CB /* ConversationItemHeader.xib in Resources */,
 				33D6D2CE1E2D1E66006F6843 /* Main.storyboard in Resources */,
+				3307167A1E58F0F600CBBE4F /* CardView.xib in Resources */,
 				33DD6A8F1E2EA6A1008475CB /* ConversationItemPhotoCell.xib in Resources */,
 				33D928691E581802009122A1 /* Assets.xcassets in Resources */,
 				333F6FDE1E4A9086008D396F /* GoogleService-Info.plist in Resources */,
@@ -530,6 +548,8 @@
 				33DD6A851E2D4A94008475CB /* ContainerPageViewController.swift in Sources */,
 				33D6D2C91E2D1E66006F6843 /* AppDelegate.swift in Sources */,
 				3363FFC21E3D49FF00745EC9 /* LogInViewController.swift in Sources */,
+				33E208BB1E58F882007BFC80 /* CustomKolodaView.swift in Sources */,
+				3307167C1E58F10300CBBE4F /* CardView.swift in Sources */,
 				33DD6A891E2D4BF1008475CB /* NewsFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

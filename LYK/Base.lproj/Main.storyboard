@@ -117,9 +117,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="a65-W4-vTM"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="a76-lh-wcc" id="cDm-xD-9TY"/>
-                        <segue destination="uZZ-NY-yxa" kind="presentation" identifier="showSwipeCards" animates="NO" modalPresentationStyle="fullScreen" id="gHQ-Mg-7WT"/>
+                        <segue destination="uZZ-NY-yxa" kind="presentation" identifier="showSwipeCards" modalTransitionStyle="crossDissolve" id="Tbk-oY-5SE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfO-Ga-EAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,20 +140,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbA-xg-NiK" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="16" y="28" width="343" height="619"/>
+                                <rect key="frame" x="12" y="93" width="350" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.111818932" green="0.11183650050000001" blue="0.1118125319" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PQH-sE-Hxx"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="kolodaView" destination="kbA-xg-NiK" id="rcG-ds-O4n"/>
+                        <outlet property="kolodaView" destination="kbA-xg-NiK" id="Frb-We-Ew1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CG4-Fx-I6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5999999999999" y="1037.6311844077961"/>
+            <point key="canvasLocation" x="1462" y="1038"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="0wx-3d-9Fy">
@@ -175,6 +177,10 @@
                                 <rect key="frame" x="310" y="30" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-b6-PaK">
+                                <rect key="frame" x="35" y="591" width="59" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-he-dz9">
                                 <rect key="frame" x="152" y="575" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -188,6 +194,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="mqu-he-dz9" id="GLH-G2-KYX"/>
+                        <outlet property="picturesTakenImageView" destination="G5E-b6-PaK" id="8Ha-R7-6lo"/>
                         <outlet property="previewLayer" destination="Ofw-eK-D6Q" id="85L-MW-uYd"/>
                         <outlet property="switchCameraImageView" destination="QKq-Q2-PHG" id="Xe8-oZ-zYT"/>
                         <segue destination="zW1-MF-SDr" kind="presentation" identifier="photoSegue" animates="NO" modalPresentationStyle="fullScreen" id="RDz-kd-B5j"/>
@@ -483,6 +490,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NFNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="4NF-bY-9pN" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JjJ-SY-LDN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

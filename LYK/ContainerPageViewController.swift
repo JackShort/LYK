@@ -41,6 +41,10 @@ class ContainerPageViewController: UIPageViewController, UIPageViewControllerDat
         return isHidden
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
     }

@@ -20,6 +20,16 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        print(self.image)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.flatBlack()
+        self.navigationController?.navigationBar.tintColor = UIColor.flatWhite()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.flatWhite()]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     // koloda functions 
@@ -27,7 +37,14 @@ class SwipeCardViewController: UIViewController, KolodaViewDelegate, KolodaViewD
         return 1
     }
     
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView()
+        let cardView = CardView.instanceFromNib() as! CardView
+        cardView.imageView.image = self.image
+        
+        return cardView
     }
 }

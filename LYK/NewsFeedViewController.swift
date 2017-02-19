@@ -23,6 +23,8 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     var photosData: [String: [String: AnyObject]]!
     var photoIds: [String]!
     
+    var photoToUse: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,10 +89,13 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
                 print("uh oh error when downloading photo")
                 print(error.localizedDescription)
             } else {
-                let image = UIImage(data: data!)
+                let downloadedImage = UIImage(data: data!)
+                let imageRef = downloadedImage?.cgImage
+                let image = UIImage(cgImage: imageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+                
                 self.photoIds?.append(photoId)
                 self.photosData?[photoId] = [
-                    "photo": image!,
+                    "photo": image,
                     "uid": uid as AnyObject,
                     "username": username as AnyObject,
                     "title": title as AnyObject
@@ -136,5 +141,15 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: false)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! NFPostCell
+        self.photoToUse = cell.photo
+        
+        self.performSegue(withIdentifier: "showSwipeCards", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SwipeCardViewController
+        vc.image = self.photoToUse
     }
 }

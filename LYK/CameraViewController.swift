@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 import AVFoundation
 import Firebase
+import ChameleonFramework
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var previewLayer: UIView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var switchCameraImageView: UIImageView!
+    @IBOutlet weak var picturesTakenImageView: UIImageView!
     
     var captureSession: AVCaptureSession?
     var stillImageOutput: AVCapturePhotoOutput?
@@ -31,6 +33,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var currentUser: FIRUser!
     var user: User!
     
+    var photosTaken: [UIImage]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,12 +46,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.cameraButton.layer.masksToBounds = false
         self.cameraButton.layer.cornerRadius = self.cameraButton.frame.size.height / 2
         self.cameraButton.layer.borderWidth = 5
-        self.cameraButton.layer.borderColor = UIColor.white.cgColor
+        self.cameraButton.layer.borderColor = UIColor.flatWhite().cgColor
         
         //setup switch camera button
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.switchCamera))
         singleTap.numberOfTapsRequired = 1
         self.switchCameraImageView.addGestureRecognizer(singleTap)
+        
+        // setup preview past pictures
+        self.photosTaken = [UIImage]()
+        self.picturesTakenImageView.layer.masksToBounds = true
+        self.picturesTakenImageView.layer.cornerRadius = self.picturesTakenImageView.frame.size.height / 8
+        self.picturesTakenImageView.layer.borderWidth = 2
+        self.picturesTakenImageView.layer.borderColor = UIColor.flatWhite().cgColor
         
         setupCamera(back: true)
     }
@@ -133,7 +144,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
             
             //this is when we change to the show image view controller
-            self.performSegue(withIdentifier: "photoSegue", sender: self)
+//            self.performSegue(withIdentifier: "photoSegue", sender: self)
+            
+            self.picturesTakenImageView.isHidden = false
+            self.picturesTakenImageView.image = self.photo
+            self.photosTaken.append(self.photo!)
         }
     }
     
