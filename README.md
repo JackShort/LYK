@@ -1,3 +1,1 @@
-# LYK
 
-* kill yourself joe
